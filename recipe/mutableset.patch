@@ -5,7 +5,8 @@ Subject: [PATCH] Mutable set patch
 
 ---
  utool/util_set.py | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ utool/util_class.py | 2 +-
+ 2 file changed, 2 insertion(+), 2 deletion(-)
 
 diff --git a/utool/util_set.py b/utool/util_set.py
 index 1752e37..61fdd78 100644
@@ -20,3 +21,16 @@ index 1752e37..61fdd78 100644
      """ Set the remembers the order elements were added
       Big-O running times for all methods are the same as for regular sets.
       The internal self._map dictionary maps keys to links in a doubly linked list.
+diff --git a/utool/util_class.py b/utool/util_class.py
+index 1752e37..61fdd78 100644
+--- a/utool/util_class.py
++++ b/utool/util_class.py
+@@ -949,7 +949,7 @@ def reloadable_class(cls):
+     return six.add_metaclass(ReloadingMetaclass)(cls)
+ 
+ 
+-class KwargsWrapper(collections.Mapping):
++class KwargsWrapper(collections.abc.Mapping):
+     """
+     Allows an arbitrary object attributes to be passed as a **kwargs
+     argument
