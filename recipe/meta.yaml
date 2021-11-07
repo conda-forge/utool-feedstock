@@ -9,9 +9,11 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/utool-{{ version }}.tar.gz
   sha256: 65308849e6a605b4e3c56b9a0b72f71632ba0e803b0d3bbf6e3a6e54a33605e8
+  patches:
+    - mutableset.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   skip: True  # [win] 
 
