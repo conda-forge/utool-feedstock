@@ -1,5 +1,5 @@
 {% set name = "utool" %}
-{% set version = "2.1.4" %}
+{% set version = "2.1.5" %}
 
 
 package:
@@ -8,14 +8,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/utool-{{ version }}.tar.gz
-  sha256: 65308849e6a605b4e3c56b9a0b72f71632ba0e803b0d3bbf6e3a6e54a33605e8
-  patches:
-    - mutableset.patch
+  sha256: 3ac998358701355c5660db6c068d4639c3775cda324cae1ba465ae6fa41ef10d
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  skip: True  # [win] 
+  skip: true  # [win]
 
 requirements:
   host:
@@ -39,7 +37,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Useful Utility Tools For You!'
+  summary: Useful Utility Tools For You!
   description: |
     The utool library is a collection of tools that I've found useful.
     I've written most of them from scratch, but there are a few I've
