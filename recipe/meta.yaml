@@ -1,5 +1,5 @@
 {% set name = "utool" %}
-{% set version = "2.1.7" %}
+{% set version = "2.2.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/utool-{{ version }}.tar.gz
-  sha256: cfe3a5dd7f45c09c7125adbb02fe623e4d1a319d9dcd98d4030a5a7aa17a89b7
+  sha256: 793e1889cb7b2e8ba30ed145512a96536b52b70bae3eae0117096e28fada66eb
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
