@@ -11,13 +11,14 @@ source:
   sha256: 816074cd3dfde37512a1e4993b4f7587b434eea07ddda001f167af28575209bb
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [win]
 
 requirements:
   host:
     - pip
+    - setuptools
     - python
   run:
     - python
