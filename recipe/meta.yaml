@@ -26,6 +26,14 @@ requirements:
     - timerit
     - loguru
     - numpy
+    - gitpython
+    - networkx
+    - pandas
+    - parse
+    - pyparsing
+    - pytz
+    - requests
+    - ubelt
 
 test:
   imports:
