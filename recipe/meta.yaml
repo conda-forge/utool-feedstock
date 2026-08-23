@@ -25,6 +25,7 @@ requirements:
     - six
     - timerit
     - loguru
+    - numpy
 
 test:
   imports:
