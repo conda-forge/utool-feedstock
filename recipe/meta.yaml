@@ -1,5 +1,5 @@
 {% set name = "utool" %}
-{% set version = "2.3.0" %}
+{% set version = "2.4.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/utool-{{ version }}.tar.gz
-  sha256: 64f596190b66fa6948b025ced4093b583ee395b0c2687ed465160f06dc6ac8d8
+  sha256: 46ddc6fb7703d357353383a274af36733a1b6832d8b3cbc7e81f471f563f706c
 
 build:
   number: 0
