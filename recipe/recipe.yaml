@@ -1,19 +1,21 @@
-{% set name = "utool" %}
-{% set version = "2.4.0" %}
+schema_version: 1
 
+context:
+  name: utool
+  version: "2.4.0"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/utool-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/utool-${{ version }}.tar.gz
   sha256: 46ddc6fb7703d357353383a274af36733a1b6832d8b3cbc7e81f471f563f706c
 
 build:
-  number: 1
-  script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [win]
+  number: 2
+  skip: win
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -35,19 +37,15 @@ requirements:
     - requests
     - ubelt
 
-test:
-  imports:
-    - utool
-    - utool._internal
-  commands:
-    - pip check
-  requires:
-    - pip
+tests:
+  - python:
+      imports:
+        - utool
+        - utool._internal
+      pip_check: true
 
 about:
-  home: https://github.com/Erotemic/utool
   license: Apache-2.0
-  license_family: Apache
   license_file: LICENSE
   summary: Useful Utility Tools For You!
   description: |
@@ -55,8 +53,9 @@ about:
     I've written most of them from scratch, but there are a few I've
     taken or partially taken from StackOverflow. References are given
     in most locations.
-  doc_url: https://github.com/Erotemic/utool
-  dev_url: https://github.com/Erotemic/utool
+  homepage: https://github.com/Erotemic/utool
+  repository: https://github.com/Erotemic/utool
+  documentation: https://github.com/Erotemic/utool
 
 extra:
   recipe-maintainers:
